@@ -1,0 +1,124 @@
+table {
+  font-family: Roboto,Helvetica Neue,Arial,sans-serif;
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 16px;
+  width: 70%;
+}
+
+.mat-header-cell {
+  text-transform: uppercase;
+  color: #9a9a9a;
+  padding-top: 15px;
+}
+
+tr.mat-header-row {
+  height: 45px;
+}
+
+.mat-table, mat-paginator {
+  background: none;
+}
+
+.mat-row:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.mat-row:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.books-page {
+  padding: 25px;
+  min-height: calc(100% - 123px);
+}
+
+.books-page-content {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.search {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.input {
+  padding-left: 10px;
+}
+
+          /* === РАЗМЕРЫ КОЛОНОК === */
+
+.mat-column-color {
+  width: 1%;
+}
+
+.mat-column-number {
+  width: 4%;
+  text-align: center;
+}
+
+.mat-column-title {
+  width: 35%;
+}
+
+.mat-column-author {
+  width: 20%;
+}
+
+.mat-column-id {
+  width: 15%;
+}
+
+.mat-column-options {
+  width: 15%;
+}
+
+          /* === ПЕРВАЯ КОЛОНКА === */
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+  padding-left: 10px;
+}
+
+          /* === ПРИ НАВЕДЕНИИ НА СТРОКУ === */
+
+tr.mat-row:hover {
+  background-color: #efefef;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.btn-col {
+  height: 64.8px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.btn-add {
+  color: white;
+  background-color: #da4c51;
+}
+
+          /* === КОЛОНКА С ИКОНКАМИ ===*/
+
+/* при наведении увеличивается размер иконок */
+.mat-icon-button:hover .icon {
+  transform: scale(1.2);
+}
+
+/* при наведении изменяется цвет заднего фона */
+.mat-icon-button:hover {
+  background-color: #e1e1e1;
+}
+
+.mat-icon-button {
+  margin-right: 5px;
+}

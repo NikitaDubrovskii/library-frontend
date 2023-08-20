@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
+import {BookService} from "./data/impl/book.service";
 
 @Component({
   selector: 'app-root',

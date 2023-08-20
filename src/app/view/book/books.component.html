@@ -1,0 +1,91 @@
+<div class="books-page">
+    <div class="books-page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label class="search">Поиск</mat-label>
+                        <input class="input" matInput (keyup)="applyFilter($event)"
+                               placeholder="Например: Философия" #input>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6 btn-col">
+                    <button class="btn-add" mat-stroked-button (click)="openAddDialog()">Добавить</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <table mat-table [dataSource]="dataSource" matSort>
+
+                <ng-container matColumnDef="color">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let book" [style.background-color]="color(book)"></td>
+                </ng-container>
+
+                <ng-container matColumnDef="number">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell
+                        *matCellDef="let index = index"> {{index + 1 + paginator.pageIndex * paginator.pageSize}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="title">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Название</th>
+                    <td mat-cell *matCellDef="let book" (click)="openInfoDialog(book)"> {{book.title}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="author">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Автор</th>
+                    <td mat-cell *matCellDef="let book" (click)="openInfoDialog(book)"> {{book.author}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="page">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Страницы</th>
+                    <td mat-cell *matCellDef="let book" (click)="openInfoDialog(book)"> {{book.page}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+                    <td mat-cell *matCellDef="let book" (click)="openInfoDialog(book)"> {{book.id}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="options">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let book">
+                        <div>
+                            <button mat-icon-button color="primary">
+                                <mat-icon *ngIf="!isTaken(book)" class="material-symbols-outlined icon"
+                                          matTooltip="Выдать"
+                                          (click)="openGiveDialog(book)">publish
+                                </mat-icon>
+                                <mat-icon *ngIf="isTaken(book)" class="material-symbols-outlined icon"
+                                          matTooltip="Забрать"
+                                          (click)="openGiveDialog(book)">download
+                                </mat-icon>
+                            </button>
+                            <button mat-icon-button color="primary" matTooltip="Редактировать">
+                                <mat-icon class="material-symbols-outlined icon" (click)="openEditDialog(book)">edit
+                                </mat-icon>
+                            </button>
+                            <button mat-icon-button color="warn" matTooltip="Удалить">
+                                <mat-icon class="material-symbols-outlined icon" (click)="openConfirmDialog(book)">
+                                    delete_forever
+                                </mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let book; columns: displayedColumns;"></tr>
+
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">Не найдено: {{input.value}}</td>
+                </tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" aria-label="Выберите страницу"></mat-paginator>
+        </div>
+    </div>
+</div>

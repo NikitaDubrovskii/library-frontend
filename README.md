@@ -124,7 +124,7 @@ light-bootstrap-dashboard-angular
 │   │       ├── user.component.css
 │   │       ├── user.component.html
 │   │       ├── user.component.spec.ts
-│   │       └── user.component.ts
+│   │       └── profile.component.ts
 │   ├── assets
 │   │   ├── css
 │   │   ├── fonts

@@ -4,6 +4,7 @@ export class User {
     id: number;
     firstName: string;
     secondName: string;
+    fullName: string;
     email: string;
     bookList: Book[];
 
@@ -11,6 +12,7 @@ export class User {
         this.id = id;
         this.firstName = firstName;
         this.secondName = secondName;
+        this.fullName = firstName + ' ' + secondName;
         this.email = email;
         this.bookList = bookList;
     }

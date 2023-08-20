@@ -1,0 +1,45 @@
+<mat-dialog-content>
+    <h6 *ngIf="!isTaken()" mat-dialog-title>Выдать книгу читателю</h6>
+    <h6 *ngIf="isTaken()" mat-dialog-title>Забрать книгу у читателя</h6>
+
+    <form class="example-form">
+        <mat-form-field *ngIf="!isTaken()" class="example-full-width">
+            <mat-label>ФИО</mat-label>
+            <input type="text" matInput aria-label="ФИО" [formControl]="myControl"
+                   required [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let user of filteredUsers | async" [value]="user.fullName"
+                            (click)="onUserSelected(user)">
+                    {{user.firstName}} {{user.secondName}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+        <mat-form-field *ngIf="isTaken()" class="example-full-width" appearance="outline">
+            <mat-label>ФИО</mat-label>
+            <input matInput disabled [value]="reader">
+        </mat-form-field>
+    </form>
+
+    <div *ngIf="selectedUser && !isTaken()">
+        <p>Вы выбрали
+            <span class="text-primary">{{selectedUser.firstName}} {{selectedUser.secondName}}</span>
+        </p>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <div class="col-12 text-center">
+        <button *ngIf="!isTaken()" mat-raised-button color="primary" (click)="give()">
+            Выдать книгу
+        </button>
+
+        <button *ngIf="isTaken()" mat-raised-button color="primary" (click)="take()">
+            Забрать книгу
+        </button>
+
+        <button mat-raised-button (click)="cancel()">
+            Отмена
+        </button>
+    </div>
+</mat-dialog-actions>

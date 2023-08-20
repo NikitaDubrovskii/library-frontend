@@ -1,0 +1,21 @@
+table {
+  font-family: Roboto,Helvetica Neue,Arial,sans-serif;
+  width: 100%;
+}
+
+.mat-column-color {
+  width: 1%;
+}
+
+.mat-column-options {
+  width: 3%;
+}
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+  padding-left: 10px;
+}
+
+.mat-column-number {
+  width: 4%;
+  text-align: center;
+}

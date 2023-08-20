@@ -1,0 +1,18 @@
+<mat-dialog-content>
+    <h6 mat-dialog-title>Информация о читателе</h6>
+    <p>ID: <span class="text-primary">{{user.id}}</span></p>
+    <p>Имя: <span class="text-primary">{{user.firstName}}</span></p>
+    <p>Фамилия: <span class="text-primary">{{user.secondName}}</span></p>
+    <p>Почта: <span class="text-primary">{{user.email}}</span></p>
+    <p *ngIf="user.bookList.length > 0">Книги:
+        <span *ngFor="let book of user.bookList; let last = last">
+            <span [ngClass]="{'text-primary': !book.expired, 'text-danger': book.expired}">{{book.title}} ({{book.author}})</span>{{!last ? ',' : ''}}
+        </span>
+    </p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" (click)="cancel()">
+        Закрыть
+    </button>
+</mat-dialog-actions>

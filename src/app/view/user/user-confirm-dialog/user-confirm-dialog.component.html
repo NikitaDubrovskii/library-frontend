@@ -1,0 +1,20 @@
+<mat-dialog-content>
+    <h6 mat-dialog-title>Удаление читателя</h6>
+    <div>
+        <p>
+            Вы уверены, что хотите удалить читателя "<span class="text-primary">{{user.firstName}} {{user.secondName}}</span>" ?
+        </p>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <div class="col-12 text-center">
+        <button mat-raised-button color="primary" (click)="confirm()">
+            Удалить
+        </button>
+
+        <button mat-raised-button (click)="cancel()">
+            Отмена
+        </button>
+    </div>
+</mat-dialog-actions>

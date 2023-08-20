@@ -1,0 +1,42 @@
+<mat-dialog-content>
+    <h6 mat-dialog-title>Добавление пользователя</h6>
+
+    <mat-form-field style="width:100%;" appearance="outline">
+        <mat-label>Имя</mat-label>
+        <input #inputTitle matInput [(ngModel)]="firstName">
+        <button matSuffix mat-icon-button
+                aria-label="Clear" (click)="firstName=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <mat-form-field style="width:100%;" appearance="outline">
+        <mat-label>Фамилия</mat-label>
+        <input #inputAuthor matInput [(ngModel)]="secondName">
+        <button matSuffix mat-icon-button
+                aria-label="Clear" (click)="secondName=''">
+            <mat-icon>clear</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <mat-form-field style="width:100%;" appearance="outline">
+        <mat-label>Почта</mat-label>
+        <input #inputPage matInput [(ngModel)]="email">
+        <button matSuffix mat-icon-button
+                aria-label="Clear" (click)="email=''">
+            <mat-icon>clear</mat-icon>
+        </button>
+    </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <div class="col-12 text-center">
+        <button mat-raised-button color="primary" (click)="save()">
+            Сохранить
+        </button>
+
+        <button mat-raised-button (click)="cancel()">
+            Отмена
+        </button>
+    </div>
+</mat-dialog-actions>
