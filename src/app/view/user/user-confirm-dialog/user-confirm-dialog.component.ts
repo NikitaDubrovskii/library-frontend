@@ -1,7 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {Book} from "../../../model/book";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {BookService} from "../../../data/impl/book.service";
 import {User} from "../../../model/user";
 import {UserService} from "../../../data/impl/user.service";
 

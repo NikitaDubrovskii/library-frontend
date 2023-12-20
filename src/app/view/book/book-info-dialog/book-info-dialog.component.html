@@ -4,7 +4,7 @@
     <p>Название: <span class="text-primary">{{book.title}}</span></p>
     <p>Автор: <span class="text-primary">{{book.author}}</span></p>
     <p>Кол-во страниц: <span class="text-primary">{{book.page}}</span></p>
-    <p>Читатель: <span class="text-primary">{{book.userId.firstName}} {{book.userId.secondName}}</span></p>
+    <p *ngIf="book.userId">Читатель: <span class="text-primary">{{book.userId.firstName}} {{book.userId.secondName}}</span></p>
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">

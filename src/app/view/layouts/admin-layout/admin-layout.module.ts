@@ -4,10 +4,6 @@ import {CommonModule} from '@angular/common';
 
 import {AdminLayoutRoutes} from './admin-layout.routing';
 
-import {HomeComponent} from '../../home/home.component';
-import {ProfileComponent} from '../../profile/profile.component';
-import {TablesComponent} from '../../tables/tables.component';
-import {NotificationsComponent} from '../../notifications/notifications.component';
 import {BooksComponent} from "../../book/books.component";
 import {UsersComponent} from "../../user/users.component";
 import {BookEditDialogComponent} from "../../book/book-edit-dialog/book-edit-dialog.component";
@@ -50,10 +46,6 @@ import {UserInfoDialogComponent} from "../../user/user-info-dialog/user-info-dia
         MatTooltipModule,
     ],
     declarations: [
-        HomeComponent,
-        ProfileComponent,
-        TablesComponent,
-        NotificationsComponent,
         BooksComponent,
         UsersComponent,
         BookEditDialogComponent,
@@ -64,8 +56,7 @@ import {UserInfoDialogComponent} from "../../user/user-info-dialog/user-info-dia
         BookGiveDialogComponent,
         UserConfirmDialogComponent,
         BookInfoDialogComponent,
-        UserInfoDialogComponent,
-
+        UserInfoDialogComponent
     ],
     entryComponents: [
         BookEditDialogComponent,

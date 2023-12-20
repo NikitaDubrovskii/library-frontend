@@ -2,7 +2,6 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {Book} from "../../../model/book";
 import {BookService} from "../../../data/impl/book.service";
-import {UserService} from "../../../data/impl/user.service";
 import {User} from "../../../model/user";
 
 @Component({

@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, DoCheck, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {Book} from "../../model/book";
 import {BookService} from "../../data/impl/book.service";
 
@@ -29,7 +29,6 @@ export class BooksComponent implements OnInit, AfterViewInit {
     @ViewChild(MatSort) sort: MatSort;
 
     books: Book[] = [];
-    bookId: number;
 
     constructor(private bookService: BookService,
                 private dialog: MatDialog) {

@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
-import {BookService} from "./data/impl/book.service";
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,19 +7,11 @@ import {BookService} from "./data/impl/book.service";
 })
 export class AppComponent implements OnInit {
 
-     constructor(public location: Location) {}
+     constructor() {
+     }
 
     ngOnInit(){
     }
 
-    isMap(path){
-      var titlee = this.location.prepareExternalUrl(this.location.path());
-      titlee = titlee.slice( 1 );
-      if(path == titlee){
-        return false;
-      }
-      else {
-        return true;
-      }
-    }
+
 }

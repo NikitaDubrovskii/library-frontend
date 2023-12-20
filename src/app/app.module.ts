@@ -14,14 +14,14 @@ import {AppComponent} from './app.component';
 import {AdminLayoutComponent} from './view/layouts/admin-layout/admin-layout.component';
 import {USER_URL_TOKEN} from "./data/impl/user.service";
 import {BOOK_URL_TOKEN} from "./data/impl/book.service";
+import {MAIN_URL_TOKEN} from "./data/impl/main.service";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {BrowserModule} from "@angular/platform-browser";
 import {MatIconModule} from "@angular/material/icon";
-import { BookInfoDialogComponent } from './view/book/book-info-dialog/book-info-dialog.component';
-import { UserInfoDialogComponent } from './view/user/user-info-dialog/user-info-dialog.component';
+
 
 
 @NgModule({
@@ -53,6 +53,10 @@ import { UserInfoDialogComponent } from './view/user/user-info-dialog/user-info-
         {
             provide: BOOK_URL_TOKEN,
             useValue: 'http://localhost:8080/book'
+        },
+        {
+            provide: MAIN_URL_TOKEN,
+            useValue: 'http://localhost:8080'
         }
     ],
 

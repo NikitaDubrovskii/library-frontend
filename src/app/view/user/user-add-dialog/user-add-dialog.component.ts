@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from "../../../model/user";
-import {MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {MatDialogRef} from "@angular/material/dialog";
 import {UserService} from "../../../data/impl/user.service";
 
 @Component({
@@ -16,8 +16,7 @@ export class UserAddDialogComponent implements OnInit {
     email: string;
 
     constructor(private dialogRef: MatDialogRef<UserAddDialogComponent>,
-                private userService: UserService,
-                private dialog: MatDialog) {
+                private userService: UserService) {
     }
 
     ngOnInit(): void {

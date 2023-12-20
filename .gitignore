@@ -46,3 +46,5 @@ package-lock.json
 LICENSE.md
 ISSUE_TEMPLATE.md
 README.md
+/done/
+/src/jar/

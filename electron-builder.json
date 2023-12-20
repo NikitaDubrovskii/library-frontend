@@ -1,0 +1,19 @@
+{
+  "appId": "your.app.id",
+  "productName": "Library",
+  "directories": {
+    "output": "done"
+  },
+  "extraResources": [{
+    "from": "dist/library/jar/library-backend-0.0.1-SNAPSHOT.jar",
+    "to": "jar/library-backend-0.0.1-SNAPSHOT.jar"
+  }
+  ],
+  "files": [
+    "dist/**/*",
+    "electron.main.js"
+  ],
+  "win": {
+    "target": "nsis"
+  }
+}
