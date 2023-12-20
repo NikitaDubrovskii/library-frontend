@@ -76,6 +76,7 @@ export class UsersComponent implements OnInit, AfterViewInit {
         dialogRef.afterClosed().subscribe((updatedUser) => {
             if (updatedUser) {
                 this.notification('success', `Читатель <b>${updatedUser.firstName} ${updatedUser.secondName}</b> обновлен!`)
+                this.fillTable()
             } else {
                 this.notification('warning', `Обновление читателя было отменено!`)
             }

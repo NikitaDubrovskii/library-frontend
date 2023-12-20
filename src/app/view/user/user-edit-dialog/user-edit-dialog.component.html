@@ -28,7 +28,7 @@
         </button>
     </mat-form-field>
 
-    <div *ngIf="dataSource.data.length > 0">
+    <!--<div *ngIf="dataSource.data.length > 0">
         <p>Книги у читателя</p>
         <div class="card">
             <table mat-table [dataSource]="dataSource">
@@ -58,23 +58,10 @@
                     <td mat-cell *matCellDef="let book"> {{book.id}} </td>
                 </ng-container>
 
-                <!--<ng-container matColumnDef="options">
-                    <th mat-header-cell *matHeaderCellDef></th>
-                    <td mat-cell *matCellDef="let book">
-                        <div>
-                            <button mat-icon-button color="primary" matTooltip="Забрать">
-                                <mat-icon class="material-symbols-outlined icon" (click)="openGiveDialog(book)">download
-                                </mat-icon>
-                            </button>
-                        </div>
-                    </td>
-                </ng-container>-->
-
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let book; columns: displayedColumns;"></tr>
             </table>
-        </div>
-    </div>
+        </div>-->
 </mat-dialog-content>
 
 <mat-dialog-actions>

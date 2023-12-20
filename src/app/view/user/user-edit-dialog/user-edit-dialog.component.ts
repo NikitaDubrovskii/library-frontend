@@ -4,7 +4,6 @@ import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog
 import {UserService} from "../../../data/impl/user.service";
 import {MatTableDataSource} from "@angular/material/table";
 import {Book} from "../../../model/book";
-import {BookGiveDialogComponent} from "../../book/book-give-dialog/book-give-dialog.component";
 
 declare var $: any;
 
@@ -36,13 +35,15 @@ export class UserEditDialogComponent implements OnInit {
         this.secondName = this.user.secondName;
         this.email = this.user.email;
 
-        this.findBooks();
+        //this.findBooks();
     }
 
     save(): void {
         this.user.firstName = this.firstName;
         this.user.secondName = this.secondName;
         this.user.email = this.email;
+
+        this.user.bookList = this.dataSource.data;
 
         this.userService.update(this.user.id, this.user).subscribe((savedUser) => {
             console.log("Пользователь обновлен!");
@@ -60,22 +61,6 @@ export class UserEditDialogComponent implements OnInit {
         }
     }
 
-    openGiveDialog(book: Book) {
-        const dialogRef = this.dialog.open(BookGiveDialogComponent, {
-            width: '500px',
-            data: book,
-            autoFocus: false
-        });
-
-        dialogRef.afterClosed().subscribe(({book, name, message}) => {
-            if (book) {
-                this.notification('success', `Книга <b>${book.title}</b> читателя ${name} возвращена!`)
-                this.findBooks();
-            } else {
-                this.notification('warning', `Возвтрат книги был отменен!`)
-            }
-        })
-    }
 
     private findBooks(): void {
         if (this.user.bookList.length > 0) {
